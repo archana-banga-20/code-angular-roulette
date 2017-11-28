@@ -1,0 +1,105 @@
+<div style="padding: 0;margin: 0">
+  <div class="row" style="background-color: green;padding: 0;margin: 0;">
+    <div class="col-lg-2">
+      <h1 style="padding: 10px;margin-top: 0;">Roulette</h1>
+    </div>
+    <div class="col-lg-4"></div>
+    <div class="col-lg-2" style="margin-top: 10px">
+      <textarea rows="2" cols="30" size="30">{{dummyText}}</textarea>
+    </div>
+    <div class="col-lg-1"></div>
+    <div class="col-lg-1" style="margin-top: 10px">
+      <button class="btn btn-default" (click)="resetGame(true)">Refresh</button>
+    </div>
+    <div class="col-lg-1" style="margin-top: 10px">
+      <button class="btn btn-default" (click)="refreshGame()">Exit</button>
+    </div>
+  </div>
+
+  <div style="margin-top: 20px">
+    <div style="margin-left: 320px;">
+      <img src="../../assets/roulette.png">
+    </div>
+    <div class="container" style="margin-left: 350px;margin-top: 3%;font-size: 15px">
+      <div class="row col-lg-12">
+            <div class="col-lg-1">
+              <label>1st 12</label>
+            </div>
+
+            <div class="col-lg-1">
+              <input id="bet1" type="number" min="0" step="500" [(ngModel)] = betAmount[0] onkeydown="return false"  style="width: 50px"/>
+            </div>
+
+            <div class="col-lg-1">
+              <label>2nd 12</label>
+            </div>
+
+            <div class="col-lg-1">
+              <input id="bet2" type="number" min="0" step="500" [(ngModel)] = betAmount[1] onkeydown="return false"  style="width: 50px"/>
+            </div>
+
+            <div class="col-lg-1">
+              <label>3rd 12</label>
+            </div>
+
+            <div class="col-lg-1">
+              <input id="bet3" type="number" min="0" step="500" [(ngModel)] = betAmount[2] onkeydown="return false"  style="width: 50px"/>
+            </div>
+      </div>
+
+      <div class="row col-lg-12" style="margin-top: 2%">
+            <div class="col-lg-1">
+              <label>0</label>
+            </div>
+
+            <div class="col-lg-1">
+              <input id="bet4" type="number" min="0" step="500" [(ngModel)] = betAmount[3] onkeydown="return false"  style="width: 50px"/>
+            </div>
+
+            <div class="col-lg-1">
+              <label>1 to 18</label>
+            </div>
+
+            <div class="col-lg-1">
+              <input id="bet5" type="number" min="0" step="500" [(ngModel)] = betAmount[4] onkeydown="return false"  style="width: 50px"/>
+            </div>
+
+            <div class="col-lg-1">
+              <label>19 to 36</label>
+            </div>
+
+            <div class="col-lg-1">
+              <input id="bet6" type="number" min="0" step="500" [(ngModel)] = betAmount[5] onkeydown="return false"  style="width: 50px"/>
+            </div>
+      </div>
+
+      <div class="row col-lg-12" style="margin-top: 2%">
+            <div class="col-lg-1">
+              <label>Even</label>
+            </div>
+
+            <div class="col-lg-1">
+              <input id="bet7" type="number" min="0" step="500" [(ngModel)] = betAmount[6] onkeydown="return false"  style="width: 50px"/>
+            </div>
+
+            <div class="col-lg-1">
+              <label>Odd</label>
+            </div>
+
+            <div class="col-lg-1">
+              <input id="bet8" type="number" min="0" step="500" [(ngModel)] = betAmount[7] onkeydown="return false"  style="width: 50px"/>
+            </div>
+
+            <div class="col-lg-2">
+              <button style="width: 143px;background-color: green;font-size: larger" data-toggle="modal" data-target="#myModal"><b>Play</b></button>
+            </div>
+      </div>
+      <app-confirmation (start)="setPlayStatus($event)"></app-confirmation>
+      <app-error (reset)="resetGame($event)"></app-error>
+      <app-winning [winingMsg]="winingMsg" (reset)="resetGame($event)"></app-winning>
+    </div>
+    <div>
+
+    </div>
+  </div>
+</div>
